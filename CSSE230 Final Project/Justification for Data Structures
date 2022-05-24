@@ -1,0 +1,5 @@
+We are using a graph as the basis for the navigation system because
+it will allow us to traverse less nodes and run in O(log(n)) time.
+We are also using an ArrayList of the links between nodes in order to
+quickly access any node and to help with traversing all paths for the 
+searching algorithm.

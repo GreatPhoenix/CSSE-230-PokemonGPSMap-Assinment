@@ -1,0 +1,47 @@
+@startuml
+
+Main ..* Graph
+Main ..* GUIFrame
+Graph ..* "*" Node
+Node ..* "*" Link
+NavigationPanel ..* GUIListener
+GUIFrame ..* NavigationPanel
+NavigationPanel ..* "*" GUIButton
+NavigationPanel ..* PathAnimator
+Graph .. PathAnimator
+GUIFrame --|> JFrame
+GUIListener --|> MouseListener
+NavigationPanel --|> JPanel
+GUIButton --|> JButton
+
+class Node {
+string locationType
+string locationName
+void insert()
+void remove()
+}
+
+class Link {
+int distanceCost
+int timeCost
+int dangerCost
+int routeName
+int getDistCost()
+int getTimeCost()
+int get dangerCost()
+}
+
+class Graph {
+int size
+ArrayList<Node> nodes
+boolean insert()
+boolean remove()
+getOptimalPath(Node start, Node end, String sortType)
+}
+
+class NavigationPanel {
+Image mapImage
+void drawRoute()
+}
+
+@enduml
